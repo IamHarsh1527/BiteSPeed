@@ -4,6 +4,7 @@ import com.IdentityReconciliationBiteSpeed.Solution.Dto.RequestDto;
 import com.IdentityReconciliationBiteSpeed.Solution.Dto.ResponseDto;
 import com.IdentityReconciliationBiteSpeed.Solution.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,6 +25,10 @@ public class ContactController {
             return null;
         }
         return contactService.getTheInformationforUser(requestDto);
+    }
+    @GetMapping
+    public ResponseDto GetAllInformation() {
+        return new ResponseDto();
     }
 
 }
